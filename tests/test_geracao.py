@@ -24,3 +24,4 @@ class TestGeracaoNumeroSecreto(unittest.TestCase):
     def test_intervalo_unico(self):
         resultado = gerar_numero_secreto(42, 42)
         self.assertEqual(resultado, 42)
+        
