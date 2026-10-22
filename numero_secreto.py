@@ -1,3 +1,5 @@
+import random
+
 """Jogo de adivinhação de números executado no terminal."""
 
 
@@ -6,8 +8,10 @@ def gerar_numero_secreto(inicio=1, fim=100, modo_teste=False, numero_fixo=42):
 
     O modo de teste utiliza um valor fixo para permitir execuções reproduzíveis.
     """
-    raise NotImplementedError("Geração do número secreto pendente")
-
+    if modo_teste:
+        return numero_fixo
+    else:
+        return random.randint(inicio, fim)
 
 def ler_palpite(inicio=1, fim=100):
     """Lê e valida um palpite inteiro dentro do intervalo informado."""
