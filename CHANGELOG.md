@@ -1,8 +1,12 @@
-# Histórico de versões
+# Changelog
 
-## Não lançado
+Todas as alterações relevantes do projeto serão registradas neste arquivo.
 
-- Estrutura inicial e plano de entregas disponíveis.
-- Regras do jogo ainda não implementadas.
+## [Unreleased]
 
-> Registre aqui as alterações quando as Pull Requests forem integradas. Não declare versões lançadas antes da implementação e dos testes.
+### Added
+
+- Estrutura base da aplicação em Python.
+- Teste de carregamento do módulo.
+- Pipeline de testes com GitHub Actions.
+- Documentação de requisitos e planejamento.

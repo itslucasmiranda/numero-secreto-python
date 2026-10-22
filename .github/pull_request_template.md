@@ -1,15 +1,18 @@
-## Contexto / Issue
+## Contexto
 
-Closes #NUMERO
+Issue relacionada: Closes #NUMERO
 
-## O que mudou?
+## Resumo das alterações
 
-## Como testar?
+Descreva as mudanças e o comportamento esperado.
 
-- [ ] Rodei os testes locais.
-- [ ] Conferi a execução manual.
-- [ ] Consultei a aba Files changed.
-- [ ] Confirmei que não incluí credenciais ou arquivos temporários.
+## Validação
 
-## Observações / evidências
+- [ ] Testes executados localmente.
+- [ ] Mudanças revisadas em `Files changed`.
+- [ ] CI concluída com sucesso.
+- [ ] Nenhuma credencial ou arquivo sensível incluído.
 
+## Evidências e observações
+
+Inclua saídas relevantes, cenários testados ou limitações conhecidas.

@@ -1,72 +1,72 @@
-# 🎯 Descubra o Número Secreto
+# Descubra o Número Secreto
 
-> Projeto final do módulo de fundamentos de Python. Repositório de **aprendizado orientado a etapas**, usando Git, GitHub, Issues, branches, Pull Requests, testes e integração contínua.
+Jogo de adivinhação executado no terminal, desenvolvido em Python com a biblioteca padrão.
 
-**Status:** 🚧 Etapa 0 — estrutura inicial preparada; jogo propositalmente incompleto.
+**Status:** em desenvolvimento. A estrutura do projeto está disponível; as funcionalidades do jogo serão integradas de forma incremental.
 
-## Objetivo
+## Funcionalidades previstas
 
-Criar um jogo de terminal que sorteia um número entre limites configuráveis e permite que a pessoa tente adivinhá-lo, recebendo dicas sobre tentar um número maior ou menor. O jogo deve tratar entradas inválidas sem encerrar, contar tentativas válidas, informar vitória ou derrota e exibir mensagens motivadoras.
+- Geração de número secreto aleatório dentro de um intervalo definido.
+- Modo determinístico para testes com um número fixo.
+- Leitura e validação de palpites inteiros.
+- Dicas indicando se o número secreto é maior ou menor que o palpite.
+- Limite configurável de tentativas, com encerramento por vitória ou derrota.
+- Mensagens de incentivo durante a partida.
 
-### Requisitos do desafio original
+As evoluções planejadas incluem escolha do intervalo, níveis de dificuldade, histórico de palpites e nova partida sem reiniciar o programa.
 
-- [ ] Gerar número secreto com `random` e permitir segredo fixo para testes.
-- [ ] Ler um palpite inteiro dentro do intervalo, repetindo a pergunta quando inválido.
-- [ ] Controlar um número máximo de tentativas (padrão: 7).
-- [ ] Exibir pistas **MAIOR/MENOR** corretas.
-- [ ] Encerrar ao acertar; avisar quando acabarem as tentativas.
-- [ ] Mostrar mensagens motivadoras.
-- [ ] Organizar o código em funções (`gerar_numero_secreto`, `ler_palpite`, `mensagem_motivadora`, `jogar`).
+## Requisitos
 
-**Extras propostos no PDF, somente após o MVP:** escolha de intervalo, níveis de dificuldade, histórico de palpites e replay sem reiniciar o programa.
+- Python 3.13 ou superior.
+- Git, para controle de versão.
 
-## Comece aqui
+Não são necessárias dependências externas.
 
-1. Leia [`docs/ETAPAS.md`](docs/ETAPAS.md) para conhecer as entregas e critérios.
-2. Leia [`docs/COMANDOS_GIT.md`](docs/COMANDOS_GIT.md) para configurar Git/GitHub no Windows.
-3. Execute `python numero_secreto.py` para conferir o ponto de partida.
-4. Execute `python -m unittest discover -s tests -v` para rodar o teste de infraestrutura.
-5. Siga [`docs/PASSO_01.md`](docs/PASSO_01.md) e implemente a primeira função.
+## Execução
 
-> O teste inicial verifica **somente** que o módulo e suas funções existem. Não comprova as regras do jogo. Os testes de comportamento serão escritos conforme as entregas evoluírem.
-
-## Estrutura
-
-```text
-numero-secreto-python/
-├── numero_secreto.py            # Desafio (funções ainda não implementadas)
-├── tests/
-│   └── test_smoke.py            # Somente teste inicial da estrutura
-├── docs/
-│   ├── ETAPAS.md                 # Roadmap e critérios de aceite
-│   ├── PASSO_01.md              # Primeira tarefa para programar
-│   ├── COMANDOS_GIT.md          # Guia prático Git/GitHub
-│   ├── FLUXO_OBSIDIAN.md        # Nota Markdown com Mermaid e flashcards
-│   └── REQUISITOS.md            # Origem no PDF x práticas adicionais
-├── .github/
-│   ├── workflows/ci.yml         # Testes automáticos em push e PR
-│   ├── ISSUE_TEMPLATE/          # Modelos de tarefa/bug
-│   └── pull_request_template.md # Checklist de revisão
-├── .gitignore
-└── .editorconfig
+```bash
+python numero_secreto.py
 ```
 
-## Tecnologia e comandos
+A versão atual inicializa o programa, mas ainda não contém a lógica completa da partida.
 
-- Python 3.13 (biblioteca padrão; **sem dependências externas**).
-- Git e GitHub; GitHub CLI (`gh`) opcional.
+## Testes
 
-```powershell
-python numero_secreto.py
+```bash
 python -m unittest discover -s tests -v
 ```
 
-## Processo de entrega
+Os testes disponíveis nesta etapa verificam o carregamento do módulo e a definição das funções. Os testes funcionais serão adicionados conforme as funcionalidades forem implementadas.
 
-`Issue → branch → desenvolvimento → testes → commits pequenos → push → PR → review → merge → main`
+## Estrutura do repositório
 
-Não programe todas as funções antes da primeira PR: a intenção deste repositório é **registrar as etapas reais da construção**.
+```text
+numero-secreto-python/
+├── numero_secreto.py
+├── tests/
+│   └── test_smoke.py
+├── docs/
+│   ├── REQUIREMENTS.md
+│   ├── ROADMAP.md
+│   └── DEVELOPMENT.md
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── pull_request_template.md
+│   └── workflows/ci.yml
+├── .editorconfig
+├── .gitignore
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+└── README.md
+```
 
-## Origem
+## Documentação
 
-Material didático fornecido pelo estudante: `m10_a55.pdf`, projeto **“Descubra o Número Secreto”**. Este repositório adiciona processo de engenharia de software para aprendizado; o documento original não exige GitHub, CI ou Pull Requests.
+- [Requisitos funcionais e critérios de aceitação](docs/REQUIREMENTS.md)
+- [Planejamento das entregas](docs/ROADMAP.md)
+- [Fluxo de desenvolvimento e versionamento](docs/DEVELOPMENT.md)
+- [Diretrizes de contribuição](CONTRIBUTING.md)
+
+## Qualidade
+
+O repositório utiliza `unittest` para os testes automatizados e GitHub Actions para verificar alterações propostas em Pull Requests.
