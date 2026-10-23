@@ -32,7 +32,23 @@ def mensagem_motivadora():
 def jogar(inicio=1, fim=100, max_tentativas=7, modo_teste=False, numero_fixo=42):
     """Controla o fluxo da partida e o limite de tentativas."""
     print("Descubra o Número Secreto")
-    print("Funcionalidade em desenvolvimento.")
+    
+    gerar_numero = gerar_numero_secreto(inicio, fim, modo_teste, numero_fixo)
+    tentativas = 0
+
+    while tentativas < max_tentativas:
+        palpite = ler_palpite(inicio, fim)
+        tentativas += 1
+
+        if palpite < gerar_numero:
+            print("Tente um número maior!")
+        elif palpite > gerar_numero:
+            print("Tente um número menor!")
+        else:
+            print(f"Parabéns! Você acertou o número secreto {gerar_numero} em {tentativas} tentativas.")
+            return
+
+    print(f"Suas tentativas acabaram! O número secreto era {gerar_numero}.")
 
 
 if __name__ == "__main__":
