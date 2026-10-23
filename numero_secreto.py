@@ -1,7 +1,6 @@
-import random
-
 """Jogo de adivinhação de números executado no terminal."""
 
+import random
 
 def gerar_numero_secreto(inicio=1, fim=100, modo_teste=False, numero_fixo=42):
     """Retorna um número secreto no intervalo configurado.
@@ -15,9 +14,16 @@ def gerar_numero_secreto(inicio=1, fim=100, modo_teste=False, numero_fixo=42):
 
 def ler_palpite(inicio=1, fim=100):
     """Lê e valida um palpite inteiro dentro do intervalo informado."""
-    raise NotImplementedError("Validação de palpites pendente")
-
-
+    while True:
+        try:
+            palpite = int(input(f'Digite um palpite entre {inicio} e {fim}: '))
+            if inicio <= palpite <= fim:
+                return palpite
+            else:
+                print(f'Palpite fora do intervalo! Tente novamente.')
+        except ValueError:
+            print("Entrada inválida! Por favor, digite um número inteiro.")
+            
 def mensagem_motivadora():
     """Seleciona uma mensagem de incentivo para a partida."""
     raise NotImplementedError("Mensagens motivadoras pendentes")
