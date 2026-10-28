@@ -28,3 +28,11 @@ class TestValidacaoPalpite(unittest.TestCase):
                     resultado = ler_palpite()
 
                 self.assertEqual(resultado, int(valor))
+
+    def test_intervalo_personalizado(self):
+        entradas = ["9", "21", "15"]
+        with patch("builtins.input", side_effect=entradas) as entrada:
+            resultado = ler_palpite(10, 20)
+
+        self.assertEqual(resultado, 15)
+        self.assertEqual(entrada.call_count, 3)
