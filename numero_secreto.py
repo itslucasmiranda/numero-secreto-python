@@ -26,7 +26,14 @@ def ler_palpite(inicio=1, fim=100):
             
 def mensagem_motivadora():
     """Seleciona uma mensagem de incentivo para a partida."""
-    raise NotImplementedError("Mensagens motivadoras pendentes")
+    mensagens = [
+        "Você consegue!",
+        "Não desista!",
+        "Continue tentando!",
+        "Acredite em você!",
+        "Cada tentativa é uma chance de acertar!"
+    ]
+    return random.choice(mensagens)
 
 
 def jogar(inicio=1, fim=100, max_tentativas=7, modo_teste=False, numero_fixo=42):
@@ -42,8 +49,10 @@ def jogar(inicio=1, fim=100, max_tentativas=7, modo_teste=False, numero_fixo=42)
 
         if palpite < gerar_numero:
             print("Tente um número maior!")
+            print(mensagem_motivadora())
         elif palpite > gerar_numero:
             print("Tente um número menor!")
+            print(mensagem_motivadora())
         else:
             print(f"Parabéns! Você acertou o número secreto {gerar_numero} em {tentativas} tentativas.")
             return
