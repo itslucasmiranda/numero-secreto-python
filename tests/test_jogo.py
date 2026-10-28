@@ -69,3 +69,23 @@ class TestJogo(unittest.TestCase):
         self.assertEqual(entrada.call_count, 3)
         self.assertIn("Parabéns!", saida.getvalue())
         self.assertNotIn("Suas tentativas acabaram!", saida.getvalue())
+
+    def test_configuracoes_personalizadas(self):
+        saida = StringIO()
+
+        with (
+            patch("numero_secreto.gerar_numero_secreto", return_value=15) as gerar,
+            patch("numero_secreto.ler_palpite", return_value=15) as ler,
+            redirect_stdout(saida),
+        ):
+            jogar(
+                inicio=10,
+                fim=20,
+                max_tentativas=3,
+                modo_teste=True,
+                numero_fixo=15
+            )
+
+        gerar.assert_called_once_with(10, 20, True, 15)
+        ler.assert_called_once_with(10, 20)
+        self.assertIn("Parabéns!", saida.getvalue())
