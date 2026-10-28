@@ -1,58 +1,86 @@
+
 # Descubra o Número Secreto
 
-Jogo de adivinhação executado no terminal, desenvolvido em Python com a biblioteca padrão.
+Jogo de adivinhação desenvolvido em Python e executado no terminal, utilizando apenas a biblioteca padrão.
 
-**Status:** em desenvolvimento. A estrutura do projeto está disponível; as funcionalidades do jogo serão integradas de forma incremental.
+O objetivo é descobrir um número secreto dentro de um intervalo, usando as dicas fornecidas a cada tentativa.
 
-## Funcionalidades previstas
+## Funcionalidades
 
-- Geração de número secreto aleatório dentro de um intervalo definido.
-- Modo determinístico para testes com um número fixo.
-- Leitura e validação de palpites inteiros.
-- Dicas indicando se o número secreto é maior ou menor que o palpite.
-- Limite configurável de tentativas, com encerramento por vitória ou derrota.
-- Mensagens de incentivo durante a partida.
-
-As evoluções planejadas incluem escolha do intervalo, níveis de dificuldade, histórico de palpites e nova partida sem reiniciar o programa.
+- Geração aleatória de um número secreto.
+- Modo determinístico para testes.
+- Validação de palpites inteiros.
+- Rejeição de entradas inválidas sem consumir tentativas.
+- Dicas para tentar um número maior ou menor.
+- Limite configurável de tentativas.
+- Mensagens motivadoras após palpites incorretos.
+- Encerramento por vitória ou derrota.
 
 ## Requisitos
 
 - Python 3.13 ou superior.
-- Git, para controle de versão.
 
 Não são necessárias dependências externas.
 
-## Execução
+## Como executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/itslucasmiranda/numero-secreto-python.git
+```
+
+Entre na pasta:
+
+```bash
+cd numero-secreto-python
+```
+
+Inicie o jogo:
 
 ```bash
 python numero_secreto.py
 ```
 
-A versão atual inicializa o programa, mas ainda não contém a lógica completa da partida.
+Por padrão, o jogo utiliza números entre 1 e 100 e oferece até 7 tentativas.
 
-## Testes
+## Como jogar
+
+1. Execute o programa no terminal.
+2. Digite um número inteiro entre 1 e 100.
+3. Utilize as dicas para ajustar seus próximos palpites.
+4. Continue até descobrir o número secreto ou esgotar as tentativas.
+
+Entradas inválidas não consomem tentativas.
+
+## Testes automatizados
+
+Execute a suíte completa:
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Os testes disponíveis nesta etapa verificam o carregamento do módulo e a definição das funções. Os testes funcionais serão adicionados conforme as funcionalidades forem implementadas.
+O projeto possui 19 testes automatizados, desenvolvidos com `unittest` e `unittest.mock`.
 
-## Estrutura do repositório
+O GitHub Actions executa os testes automaticamente para validar as alterações do repositório.
+
+## Estrutura do projeto
 
 ```text
 numero-secreto-python/
 ├── numero_secreto.py
 ├── tests/
+│   ├── test_geracao.py
+│   ├── test_validacao.py
+│   ├── test_jogo.py
+│   ├── test_mensagens.py
 │   └── test_smoke.py
 ├── docs/
 │   ├── REQUIREMENTS.md
 │   ├── ROADMAP.md
 │   └── DEVELOPMENT.md
 ├── .github/
-│   ├── ISSUE_TEMPLATE/
-│   ├── pull_request_template.md
-│   └── workflows/ci.yml
 ├── .editorconfig
 ├── .gitignore
 ├── CHANGELOG.md
@@ -62,11 +90,19 @@ numero-secreto-python/
 
 ## Documentação
 
-- [Requisitos funcionais e critérios de aceitação](docs/REQUIREMENTS.md)
-- [Planejamento das entregas](docs/ROADMAP.md)
-- [Fluxo de desenvolvimento e versionamento](docs/DEVELOPMENT.md)
+- [Requisitos funcionais](docs/REQUIREMENTS.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Fluxo de desenvolvimento](docs/DEVELOPMENT.md)
 - [Diretrizes de contribuição](CONTRIBUTING.md)
+- [Histórico de alterações](CHANGELOG.md)
 
-## Qualidade
+## Evoluções futuras
 
-O repositório utiliza `unittest` para os testes automatizados e GitHub Actions para verificar alterações propostas em Pull Requests.
+- Seleção de níveis de dificuldade.
+- Configuração do intervalo pelo jogador.
+- Histórico de palpites.
+- Opção de iniciar uma nova partida.
+
+## Licença
+
+Este projeto ainda não possui uma licença definida.
